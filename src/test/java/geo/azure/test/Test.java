@@ -20,7 +20,7 @@ public class Test {
 		// Get Request URL
 		BillingRequestParameter requestParam =new BillingRequestParameter();
 		requestParam.setServiceManagementEndpoint("https://management.chinacloudapi.cn");
-		requestParam.setServiceSubscriptionId("e0fbea86-6cf2-4b2d-81e2-9c59f4f96bcb");
+		requestParam.setServiceSubscriptionId("");
 		requestParam.setApiVersion("2016-08-31-preview");
 		requestParam.setFilter("MS-MC-AZR-0033P");
 		requestParam.setCurrency("CNY");
@@ -31,11 +31,11 @@ public class Test {
 		
 		// Get Credential Token
 		ADCredentialParameter credParam = new ADCredentialParameter();
-		credParam.setServiceManagementEndpoint("https://management.chinacloudapi.cn");
-		credParam.setServiceTenantId("b388b808-0ec9-4a09-a414-a7cbbd8b7e9b");
-		credParam.setAdCredentialEndpoint("https://login.chinacloudapi.cn");
-		credParam.setAdApplicationId("7cc0f74d-b58f-4b88-a8ec-434edb3c06f1");
-		credParam.setAdApplicationPassword("1QAZxsw2");
+		credParam.setServiceManagementEndpoint("<China Azure Management Endpoint>");
+		credParam.setServiceTenantId("<TenantId>");
+		credParam.setAdCredentialEndpoint("<China Azure AD Endpoint>");
+		credParam.setAdApplicationId("<Application ID>");
+		credParam.setAdApplicationPassword("<Application Password>");
 		String token = BillingRate.getADCredentialsToken(credParam);
 		String authorization = String.format("Bearer %s", token);
 		

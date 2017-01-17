@@ -1,10 +1,13 @@
 **一. 参考资料**
+
+``` powershell
 1. https://msdn.microsoft.com/en-us/library/azure/mt219004.aspx 
 2. https://github.com/blrchen/AzureSamples/tree/master/RateCard
 
+```
+
 
 **二. 获取AD认证信息**
-
 
 ``` powershell
 1. 在PowerShell中，登录Azure 账户
@@ -46,7 +49,9 @@
    
 ```
 
+
 **三. 代码测试**
+
 ``` java
 // Get Request URL
 		BillingRequestParameter requestParam =new BillingRequestParameter();
