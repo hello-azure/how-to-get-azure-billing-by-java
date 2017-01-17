@@ -19,10 +19,12 @@ public class BillingRate {
 		ExecutorService service = null;
 		try {
 			service = Executors.newFixedThreadPool(1);
-			context = new AuthenticationContext("https://login.chinacloudapi.cn/b388b808-0ec9-4a09-a414-a7cbbd8b7e9b",
+			
+		
+			context = new AuthenticationContext(String.format("%s/%s", credParam.getAdCredentialEndpoint(),credParam.getServiceTenantId()),
 					true, service);
-			ClientCredential cred = new ClientCredential("7cc0f74d-b58f-4b88-a8ec-434edb3c06f1", "1QAZxsw2");
-			Future<AuthenticationResult> future = context.acquireToken("https://management.chinacloudapi.cn/", cred,
+			ClientCredential cred = new ClientCredential(credParam.getAdApplicationId(), credParam.getAdApplicationPassword());
+			Future<AuthenticationResult> future = context.acquireToken(credParam.getServiceManagementEndpoint(), cred,
 					null);
 			result = future.get();
 		} finally {
